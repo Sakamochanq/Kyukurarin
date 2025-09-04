@@ -2,8 +2,10 @@
 using NAudio.Wave;
 using System;
 
+
 public class Program
 {
+    [STAThread]
     public static void Main(string[] args)
     {
         //Console.WriteLine("Hello Kyukurarin");
@@ -18,7 +20,15 @@ public class Program
                 outputDevice.Init(afr);
                 outputDevice.Play();
 
-                Console.WriteLine("Playing audio...");
+                Console.WriteLine("\nPlaying audio...");
+
+                // くらりちゃんの画像を読み込む
+                KurariChan kChan = new KurariChan("./assets/image/Kyukurarin.jpg");
+
+                //System.Windows.Forms.Application.EnableVisualStyles();
+                //System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+
+                System.Windows.Forms.Application.Run(kChan);
 
                 //再生終了まで待機
                 while (outputDevice.PlaybackState == PlaybackState.Playing)
