@@ -11,7 +11,8 @@ public class Program
         //Console.WriteLine("Hello Kyukurarin");
 
         string audioPath = "./assets/audio/Kyukurarin.wav";
-        string Kyukurain = "Kyukurarin for Windows by Sakamochanq";
+        string Title = "Kyukurarin for Windows by Sakamochanq";
+        string Kyukurain = "./assets/image/Kyukurarin.jpg";
 
         try
         {
@@ -25,10 +26,10 @@ public class Program
 
                 // 画面情報の取得と表示
                 Windows windows = new Windows();
-                windows.DisplayInfo(Kyukurain);
+                windows.DisplayInfo(Title);
 
-                // くらりちゃんの画像を読み込む
-                KurariChan kChan = new KurariChan("./assets/image/Kyukurarin.jpg");
+                // くらりちゃんの画像を読み込む（False:任意の画像　True:スクリーンショット）
+                KurariChan kChan = new KurariChan(true, 0.5f);
 
                 //System.Windows.Forms.Application.EnableVisualStyles();
                 //System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
