@@ -56,7 +56,11 @@ public class Windows
 
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine($"  [Memory]      : {freeMem} MB");
+        
+        // 文字カラーのリセット
+        Console.ForegroundColor = ConsoleColor.White;
     }
+
 
     // WinAPIからディスプレイ情報取得
     [StructLayout(LayoutKind.Sequential)]
