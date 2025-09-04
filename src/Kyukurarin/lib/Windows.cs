@@ -22,7 +22,7 @@ public class Windows
     public void DisplayInfo(string TITLE_TEXT)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine($"[{TITLE_TEXT}] Windows Logger\n");
+        Console.WriteLine($"\n[{TITLE_TEXT}] Windows Logger\n");
 
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("＼(°_o)／ < aa kaseki ni nattimauyo ... ♪\n");

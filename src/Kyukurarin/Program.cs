@@ -21,7 +21,7 @@ public class Program
                 outputDevice.Init(afr);
                 outputDevice.Play();
 
-                Console.WriteLine("\nPlaying audio...\n");
+                //Console.WriteLine("\nPlaying audio...\n");
 
                 // 画面情報の取得と表示
                 Windows windows = new Windows();
