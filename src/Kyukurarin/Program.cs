@@ -11,6 +11,7 @@ public class Program
         //Console.WriteLine("Hello Kyukurarin");
 
         string audioPath = "./assets/audio/Kyukurarin.wav";
+        string Kyukurain = "Kyukurarin for Windows by Sakamochanq";
 
         try
         {
@@ -20,7 +21,11 @@ public class Program
                 outputDevice.Init(afr);
                 outputDevice.Play();
 
-                Console.WriteLine("\nPlaying audio...");
+                Console.WriteLine("\nPlaying audio...\n");
+
+                // 画面情報の取得と表示
+                Windows windows = new Windows();
+                windows.DisplayInfo(Kyukurain);
 
                 // くらりちゃんの画像を読み込む
                 KurariChan kChan = new KurariChan("./assets/image/Kyukurarin.jpg");
