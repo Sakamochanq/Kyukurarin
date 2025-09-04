@@ -14,10 +14,11 @@ public class KurariChan : Form
 
         _image = Image.FromFile(imagePath);
 
-        // フォームの基本設定
         FormBorderStyle = FormBorderStyle.None;
         ShowInTaskbar = false;
-        TopMost = false;
+
+        //最前面配置 or 最背面配置のトリガー
+        TopMost = true;
 
         Bounds = Screen.PrimaryScreen.Bounds;
 
@@ -29,9 +30,7 @@ public class KurariChan : Form
         EmbedBehindDesktopIcons();
     }
 
-    /// <summary>
-    /// 画像を描画する（フォームの Paint イベント）
-    /// </summary>
+    // Form上に画像の描画
     protected override void OnPaint(PaintEventArgs e)
     {
         base.OnPaint(e);
@@ -47,7 +46,7 @@ public class KurariChan : Form
     {
         IntPtr progman = FindWindow("Progman", null);
 
-        // メッセージ送信して WorkerW を作らせる
+        // WorkerWを作成
         SendMessageTimeout(progman, 0x052C, IntPtr.Zero, IntPtr.Zero,
                            SendMessageTimeoutFlags.SMTO_NORMAL, 1000, out _);
 
@@ -57,7 +56,7 @@ public class KurariChan : Form
             IntPtr shellView = FindWindowEx(hWnd, IntPtr.Zero, "SHELLDLL_DefView", null);
             if (shellView != IntPtr.Zero)
             {
-                // WorkerW が見つかった
+                // WorkerW があった！
                 IntPtr workerW = FindWindowEx(IntPtr.Zero, hWnd, "WorkerW", null);
                 if (workerW != IntPtr.Zero)
                 {
